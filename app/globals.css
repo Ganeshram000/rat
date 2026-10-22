@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+    color: #FAF6EE;
+  }
+
+  body {
+    color: #FAF6EE;
+    background-color: #20130E; /* Warm Dark Brown instead of black */
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-lora), Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+
+  p, span, a, button, input, select, textarea, table, label {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+  }
+}
+
+/* Glassmorphism Styles & Utilities */
+.glass-nav {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.08) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-top: 1px solid rgba(255, 255, 255, 0.50);
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.22), inset 0 1px 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.glass-nav-scrolled {
+  background: rgba(40, 22, 16, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.35);
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.08) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  border-top: 1px solid rgba(255, 255, 255, 0.50);
+  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.20), inset 0 1px 1px 0 rgba(255, 255, 255, 0.30);
+}
+
+.glass-panel-hover {
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.12) 100%);
+  border-color: rgba(255, 255, 255, 0.48);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px 0 rgba(0, 0, 0, 0.28), inset 0 1px 1px 0 rgba(255, 255, 255, 0.40);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.18);
+}
+
+.glass-badge {
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-top: 1px solid rgba(255, 255, 255, 0.50);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-top: 1px solid rgba(255, 255, 255, 0.48);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.26);
+  border-color: rgba(255, 255, 255, 0.50);
+}
+
+/* Fallback for browsers that do not support backdrop-filter */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .glass-panel, .glass-nav, .glass-card {
+    background: rgba(50, 30, 22, 0.90);
+  }
+}
+
+/* Custom Scrollbar in Warm Sand */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(35, 20, 15, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9A373;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A3452F;
+}
+
+/* Subtle, Performant Animations (150-250ms) */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(4px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

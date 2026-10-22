@@ -1,0 +1,134 @@
+[
+  {
+    "id": "residential-construction",
+    "slug": "residential-construction",
+    "title": "Residential House Construction",
+    "category": "Residential",
+    "shortDescription": "Custom villas, duplex bungalows, and independent residences built with uncompromised structural integrity and modern aesthetics.",
+    "description": "From soil testing and structural excavation to final paint and fixtures, NeevSaathi delivers turnkey residential construction tailored to your lifestyle. We ensure Fe550D TMT steel, grade-certified concrete, and Rajasthani architectural detailing for homes that last generations.",
+    "coverImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "includedWork": [
+      "Comprehensive architectural blueprint & structural CAD drawings",
+      "Excavation, anti-termite treatment & reinforced foundation casting",
+      "Fe550D TMT bar reinforcement and M25/M30 grade RMC/machine mix concrete",
+      "First-class red clay brick or AAC lightweight block masonry",
+      "Double-coat sand face exterior plaster & smooth Gypsum interior finish",
+      "Concealed Finolex/Havells copper wiring & modular switchboards",
+      "Astral/Supreme CPVC plumbing with premium Kohler/Jaquar sanitary fittings",
+      "Vitrified tiles/Italian marble flooring & Asian Paints Apex Ultima exterior finish"
+    ],
+    "suitableFor": "Independent plot owners, luxury villa builders, and duplex buyers across Jaipur and NCR Rajasthan.",
+    "published": true,
+    "order": 1
+  },
+  {
+    "id": "commercial-construction",
+    "slug": "commercial-construction",
+    "title": "Commercial Construction",
+    "category": "Commercial",
+    "shortDescription": "Modern corporate offices, retail spaces, commercial plazas, and showrooms designed for functionality, durability, and business growth.",
+    "description": "We construct commercial properties engineered to maximize usable carpet area, optimize natural lighting, and comply fully with Jaipur Development Authority (JDA) and National Building Code (NBC) norms.",
+    "coverImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    "includedWork": [
+      "JDA municipal compliance & structural safety certifications",
+      "Heavy-load RCC raft/isolated footing & multi-level framing",
+      "Structural glazing, curtain walls & ACP cladding systems",
+      "High-capacity electrical sub-stations, transformer setups & 3-phase wiring",
+      "Fire-fighting piping, smoke detector arrays & emergency exits",
+      "HVAC ducting rough-ins & commercial elevator shaft engineering",
+      "Basement water-proofing with polyurethane membrane injection",
+      "Heavy-duty vitrified/epoxy flooring for high footfall traffic"
+    ],
+    "suitableFor": "Business owners, corporate developers, retail chains, and commercial property investors.",
+    "published": true,
+    "order": 2
+  },
+  {
+    "id": "home-renovation",
+    "slug": "home-renovation",
+    "title": "Home Renovation & Remodeling",
+    "category": "Renovation",
+    "shortDescription": "Transform existing houses with structural upgrades, floor additions, modular interiors, modern elevations, and water-proofing.",
+    "description": "Revitalize your ancestral or older home with our specialized remodeling solutions. From adding a new second floor to retrofitting structural beams and giving the facade a modern look, we execute renovations with minimal disruption to your daily life.",
+    "coverImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+    "includedWork": [
+      "Structural audit and load-bearing feasibility assessment",
+      "Safe demolition & debris disposal using eco-friendly protocols",
+      "Elevation facelift using stone cladding, louvers & HPL sheets",
+      "Bathroom remodeling with waterproof membranes & modern fixtures",
+      "Kitchen transformation into contemporary modular layout",
+      "Floor additions and column reinforcement with micro-concreting",
+      "Comprehensive terrace & wall dampness waterproofing treatments",
+      "Full re-wiring & plumbing replacement to eliminate old line leakages"
+    ],
+    "suitableFor": "Homeowners in established Jaipur colonies (Malviya Nagar, Mansarovar, C-Scheme, Raja Park) seeking modern lifestyle upgrades.",
+    "published": true,
+    "order": 3
+  },
+  {
+    "id": "structural-civil-work",
+    "slug": "structural-civil-work",
+    "title": "Structural & Civil Work",
+    "category": "Civil",
+    "shortDescription": "Earthwork, deep foundations, RCC framing, retaining walls, and precision concrete casting executed strictly to IS codes.",
+    "description": "The foundation is the bedrock of every enduring structure. NeevSaathi specializes in heavy civil engineering, column-beam casting, and structural retrofitting with stringent slump tests, cube strength tests, and laser-guided level checks.",
+    "coverImage": "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80",
+    "includedWork": [
+      "Geotechnical soil investigation & SBC (Safe Bearing Capacity) determination",
+      "Machine excavation, anti-termite chemical barrier treatment",
+      "Plinth beam tie-ins, DPC (Damp Proof Course) execution",
+      "Precision steel shuttering and waterproof plywood formwork",
+      "Monolithic concrete pour with needle vibration consolidation",
+      "21-day pond curing & membrane water curing systems",
+      "Retaining walls for basement & underground water reservoir tanks",
+      "Continuous quality reporting with on-site compressive cube testing"
+    ],
+    "suitableFor": "Architects, builders, and plot owners requiring pure civil & structural contracting contracts.",
+    "published": true,
+    "order": 4
+  },
+  {
+    "id": "interior-finishing",
+    "slug": "interior-finishing",
+    "title": "Interior & Finishing Work",
+    "category": "Interior",
+    "shortDescription": "Architectural false ceilings, Italian marble polishing, modular cabinetry, electrical fixtures, and designer wall finishes.",
+    "description": "We bridge structural strength with refined living spaces. Our interior craftsmen deliver bespoke woodwork, acoustic false ceilings, designer lighting setups, and luxurious wall coatings that make your space feel warm, expansive, and prestigious.",
+    "coverImage": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
+    "includedWork": [
+      "Gypsum plasterboard & Saint-Gobain acoustic false ceilings",
+      "Designer cove lighting & smart home automation conduit integration",
+      "Italian marble laying with diamond-pad mirror polishing",
+      "Large-format 4x2 / 6x4 vitrified glazed porcelain tile installation",
+      "Waterproof plywood modular kitchen & wardrobe carcass installation",
+      "Solid teakwood/flush door frames with Hafele/Godrej hardware",
+      "Velvet touch interior paints, textured stucco & micro-cement accents",
+      "Toughened glass railings, shower cubicles & aluminum slimline windows"
+    ],
+    "suitableFor": "Homeowners and boutique commercial spaces seeking turnkey interior completion with premium finishes.",
+    "published": true,
+    "order": 5
+  },
+  {
+    "id": "turnkey-construction",
+    "slug": "turnkey-construction",
+    "title": "Turnkey Construction (End-to-End)",
+    "category": "Turnkey",
+    "shortDescription": "Complete single-point responsibility: from architectural design and municipal approvals to civil construction, interior finishing, and final key handover.",
+    "description": "Experience absolute peace of mind with NeevSaathi Turnkey Solutions. We take complete ownership of your project: architectural drawings, government approvals, material procurement, on-site execution, interior styling, and handover on guaranteed milestones.",
+    "coverImage": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+    "includedWork": [
+      "End-to-end single contract with transparent stage-wise billing",
+      "Complete 2D floor plans, 3D elevations & structural engineering",
+      "Procurement of branded cement (UltraTech/Ambuja) and steel (Tata Tiscon/Jindal)",
+      "Dedicated on-site site engineer and weekly photographic progress reports",
+      "Full civil, electrical, plumbing, sanitary, and HVAC execution",
+      "Complete interior finishing, paint, doors, and electrical fittings",
+      "10-year structural warranty & 1-year complimentary defect liability maintenance",
+      "Deep cleaning, handover ceremony & complete digital project dossier"
+    ],
+    "suitableFor": "Busy professionals, NRIs, and plot owners seeking hassle-free, timely construction with zero daily supervision headaches.",
+    "published": true,
+    "order": 6
+  }
+]

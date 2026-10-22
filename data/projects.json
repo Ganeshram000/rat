@@ -1,0 +1,153 @@
+[
+  {
+    "id": "vaishali-luxury-villa",
+    "title": "The Grand Courtyard Villa",
+    "slug": "the-grand-courtyard-villa",
+    "category": "Residential",
+    "location": "Vaishali Nagar, Jaipur",
+    "area": "4,200 sq.ft",
+    "duration": "11 Months",
+    "completedDate": "January 2025",
+    "featured": true,
+    "published": true,
+    "shortDescription": "A modern 4BHK architectural villa marrying contemporary clean lines with traditional Rajasthani stone jali and an interior courtyard.",
+    "description": "Commissioned by a leading Jaipur physician, this bespoke villa was designed to foster abundant natural cross-ventilation and daylight. Built with an earthquake-resistant RCC frame, high-thermal insulation walls, and large floor-to-ceiling double-glazed windows, this home represents the pinnacle of modern Jaipur residential architecture.",
+    "coverImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "highlights": [
+      "4,200 sq.ft built-up area across G+1 levels",
+      "Centrally located open-to-sky courtyard with water feature",
+      "Italian Statuario marble flooring across living zones",
+      "High-efficiency solar grid integration and rainwater harvesting pit",
+      "Custom handcrafted Jodhpur stone jali screens for sun deflection"
+    ]
+  },
+  {
+    "id": "mansarovar-commercial-hub",
+    "title": "Aura Commercial Arcade",
+    "slug": "aura-commercial-arcade",
+    "category": "Commercial",
+    "location": "Mansarovar, Jaipur",
+    "area": "13,500 sq.ft",
+    "duration": "14 Months",
+    "completedDate": "November 2024",
+    "featured": true,
+    "published": true,
+    "shortDescription": "A multi-storey commercial complex designed for high footfall retail showrooms and modern corporate offices.",
+    "description": "Engineered on a challenging corner plot along the high-traffic Mansarovar commercial artery, this G+4 structure features clear-span post-tensioned slabs that minimize interior columns. Equipped with automated fire suppression, high-speed capsule elevators, and sound-insulated structural glazing.",
+    "coverImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "highlights": [
+      "G+4 framed commercial building with basement parking",
+      "Double-height showroom frontages with frameless toughened glass",
+      "Complete NBC-compliant fire sprinkler and dual-staircase core",
+      "Energy-efficient Saint-Gobain Low-E insulated glass units (IGU)"
+    ]
+  },
+  {
+    "id": "jagatpura-modern-duplex",
+    "title": "Sanskriti Modern Duplex",
+    "slug": "sanskriti-modern-duplex",
+    "category": "Residential",
+    "location": "Jagatpura, Jaipur",
+    "area": "3,200 sq.ft",
+    "duration": "9 Months",
+    "completedDate": "August 2024",
+    "featured": true,
+    "published": true,
+    "shortDescription": "A warm, minimalist 3BHK duplex crafted for an IT executive family featuring a rooftop lounge and pergolas.",
+    "description": "Constructed on a 200 sq.yard plot in fast-growing Jagatpura, this turnkey duplex balances privacy with open spatial flow. Highlights include cantilevered wooden staircases, an open modular kitchen, and an insulated rooftop terrace garden.",
+    "coverImage": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "highlights": [
+      "Turnkey execution with complete carpentry and modular fittings",
+      "Terrace gazebo with solar pergolas & automated micro-irrigation",
+      "Vitrified 4x2 floor slabs and concealed warm LED profile lighting"
+    ]
+  },
+  {
+    "id": "malviya-nagar-renovation",
+    "title": "The Courtyard Bungalow Remodel",
+    "slug": "the-courtyard-bungalow-remodel",
+    "category": "Renovation",
+    "location": "Malviya Nagar, Jaipur",
+    "area": "2,600 sq.ft",
+    "duration": "5 Months",
+    "completedDate": "March 2024",
+    "featured": true,
+    "published": true,
+    "shortDescription": "Comprehensive structural upgrade, second floor addition, and modern facade renovation of a 28-year-old residence.",
+    "description": "We reinforced the existing foundations with chemical anchoring and micro-concrete jacking, created a new open-plan living room by removing non-structural walls with steel I-beams, and revamped the facade with composite timber louvers and Dholpur stone cladding.",
+    "coverImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "highlights": [
+      "Complete structural strengthening with zero foundation settlement",
+      "Modern open-concept living area with load-transfer steel beams",
+      "100% eradication of dampness and seepage with polyurethane injection"
+    ]
+  },
+  {
+    "id": "civil-lines-heritage-villa",
+    "title": "The Heritage Estate",
+    "slug": "the-heritage-estate",
+    "category": "Residential",
+    "location": "Civil Lines, Jaipur",
+    "area": "5,800 sq.ft",
+    "duration": "15 Months",
+    "completedDate": "December 2023",
+    "featured": false,
+    "published": true,
+    "shortDescription": "An opulent royal estate blending classical Rajasthani arches, chhatris, and carved pillars with state-of-the-art smart living.",
+    "description": "Constructed in the prestigious Civil Lines zone of Jaipur, this private estate required skilled stone carvers from Sikandra and high-grade structural engineering to support multi-vaulted brick and stone arches alongside modern seismic-proof RCC skeleton work.",
+    "coverImage": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "highlights": [
+      "Hand-carved red stone brackets and fluted columns",
+      "Home automation controlling lighting, climate, and security",
+      "Double-height grand entrance foyer with bespoke crystal chandelier"
+    ]
+  },
+  {
+    "id": "c-scheme-corporate-studio",
+    "title": "Apex Design & Legal Chambers",
+    "slug": "apex-design-legal-chambers",
+    "category": "Interior",
+    "location": "C-Scheme, Jaipur",
+    "area": "2,900 sq.ft",
+    "duration": "4 Months",
+    "completedDate": "May 2024",
+    "featured": false,
+    "published": true,
+    "shortDescription": "Turnkey interior civil reconstruction and luxury finish for a prestigious boutique law firm.",
+    "description": "Full interior architecture project featuring acoustic glass partitions, warm walnut wood wall panelling, hidden wiring runs, and custom conference room furniture built with waterproof marine ply and veneer.",
+    "coverImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "highlights": [
+      "Custom acoustic soundproofing STC rating 45 for private chambers",
+      "Seamless micro-topping floor and bespoke veneer wall panelling",
+      "Smart dimmable lighting scenes for presentations and client meetings"
+    ]
+  }
+]
