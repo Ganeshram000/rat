@@ -1,5 +1,12 @@
-import { Lora, Poppins } from 'next/font/google';
+import { Playfair_Display, Lora, Poppins } from 'next/font/google';
 import './globals.css';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
+});
 
 const lora = Lora({
   subsets: ['latin'],
@@ -110,14 +117,14 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" className={`${lora.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${lora.variable} ${poppins.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="min-h-screen bg-beige-100 text-brown-dark font-sans antialiased selection:bg-terracotta selection:text-white">
+      <body className="min-h-screen bg-offwhite text-navy-900 font-sans antialiased selection:bg-gold selection:text-navy-950">
         {children}
       </body>
     </html>

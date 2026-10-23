@@ -5,7 +5,7 @@ import Logo from '@/components/common/Logo';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen relative bg-[#1B100C] text-[#FAF6EE] flex flex-col justify-center items-center p-6 text-center">
+    <div className="min-h-screen relative bg-[#3D2B23] text-[#FAF6EE] flex flex-col justify-center items-center p-6 text-center">
       {/* Blurred Architectural Background */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div 

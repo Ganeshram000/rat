@@ -1,38 +1,43 @@
 import React from 'react';
-import { getServices } from '@/lib/db';
+import { servicesData } from '@/data/staticData';
 import ServicesClientList from './ServicesClientList';
 
 export const metadata = {
   title: 'Construction & Civil Contracting Services in Jaipur — NeevSaathi',
-  description: 'Explore comprehensive construction contracting services in Jaipur: residential turnkey house construction, commercial plazas, structural renovation, and civil supervision.',
+  description: 'Explore comprehensive construction contracting services in Jaipur: residential turnkey house construction, commercial plazas, architectural design, interior fit-outs, and civil supervision.',
 };
 
 export default function ServicesPage() {
-  const allServices = getServices() || [];
-  const publishedServices = allServices.filter(s => s.published);
-
   return (
-    <div className="py-8 sm:py-12 lg:py-16 space-y-10 sm:space-y-14">
-      {/* Header Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel rounded-3xl p-8 sm:p-12 border border-white/20 shadow-2xl text-white">
-          <div className="max-w-3xl">
-            <span className="inline-block px-3.5 py-1 rounded-full glass-badge text-sand text-xs font-sans font-semibold uppercase tracking-wider mb-3">
-              Engineering Excellence Across Jaipur
+    <div className="bg-offwhite min-h-screen py-12 sm:py-16 lg:py-20 text-navy-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+        
+        {/* Header Hero Banner */}
+        <div className="bg-navy rounded-3xl p-8 sm:p-12 lg:p-16 border border-gold/40 shadow-2xl text-white relative overflow-hidden">
+          <div className="max-w-3xl relative z-10 space-y-4">
+            <span className="inline-block px-3.5 py-1.5 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-[0.2em]">
+              ENGINEERING EXCELLENCE ACROSS JAIPUR
             </span>
             <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight leading-tight">
               Our Construction & Contracting Services
             </h1>
-            <p className="text-beige-200/90 font-sans text-sm sm:text-base mt-3 leading-relaxed">
+            <p className="text-white/80 text-base sm:text-lg font-light leading-relaxed">
               From soil testing and structural excavation to final paint and fixtures, NeevSaathi delivers turnkey residential, commercial, and renovation solutions built to the highest safety and material benchmarks.
             </p>
           </div>
-        </div>
-      </div>
 
-      {/* Main Interactive Services Listing */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ServicesClientList initialServices={publishedServices} />
+          <div 
+            className="absolute inset-0 opacity-10 pointer-events-none"
+            style={{
+              backgroundImage: `radial-gradient(#C9A45C 1px, transparent 1px)`,
+              backgroundSize: '32px 32px'
+            }}
+          />
+        </div>
+
+        {/* Services List Component */}
+        <ServicesClientList initialServices={servicesData} />
+
       </div>
     </div>
   );

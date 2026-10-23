@@ -1,70 +1,75 @@
 import React from 'react';
-import { ShieldCheck, MessageCircle, Gem, Compass, Landmark } from 'lucide-react';
+import { ShieldCheck, FileText, HardHat, Clock, Award, CheckCircle2 } from 'lucide-react';
+import { whyChooseUsData } from '@/data/staticData';
+
+const iconMap = {
+  ShieldCheck: ShieldCheck,
+  FileText: FileText,
+  HardHat: HardHat,
+  Clock: Clock,
+};
 
 export default function WhyChooseUs() {
-  const points = [
-    {
-      icon: ShieldCheck,
-      title: 'Professional Workmanship',
-      description: 'Supervised by qualified civil engineers. Multi-stage structural audits cover soil testing, cube tests, column-beam alignment, and waterproofing integrity.'
-    },
-    {
-      icon: MessageCircle,
-      title: 'Clear Communication',
-      description: 'You get a single dedicated project manager, weekly photographic progress dossiers on WhatsApp, and stage-by-stage transparent billing with zero surprise variations.'
-    },
-    {
-      icon: Gem,
-      title: 'Quality Materials Only',
-      description: 'We build exclusively with branded, certified materials — UltraTech/Ambuja Grade 43/53 cement, Fe550D TMT bars (Tata/Jindal), Finolex wiring, and Astral plumbing.'
-    },
-    {
-      icon: Compass,
-      title: 'Customized Construction',
-      description: 'Whether you desire traditional Rajasthani stone jharokhas, high-ceiling modern minimalist architecture, or commercial steel structures, we customize to your vision.'
-    },
-    {
-      icon: Landmark,
-      title: 'Local Jaipur Knowledge',
-      description: 'Deep familiarity with Jaipur Development Authority (JDA) building bylaws, municipal setbacks, groundwater depth, and regional seasonal climate demands.'
-    }
-  ];
-
   return (
-    <section className="py-12 sm:py-16 lg:py-20 relative">
+    <section className="py-20 lg:py-28 bg-white text-navy-900 border-t border-navy-100" aria-label="Why Choose NeevSaathi">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="inline-block px-3.5 py-1 rounded-full glass-badge text-sand text-xs font-sans font-semibold uppercase tracking-wider mb-2.5">
-            The NeevSaathi Advantage
-          </span>
-          <h2 className="text-2xl sm:text-4xl font-serif font-bold text-white tracking-tight">
-            Why Discerning Clients in Jaipur Choose Us
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-gold-dark text-xs font-semibold tracking-[0.2em] uppercase">
+            <Award className="w-3.5 h-3.5 text-gold" />
+            <span>OUR CORE COMMITMENT</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-navy-950 tracking-tight">
+            Why Discerning Clients Choose NeevSaathi
           </h2>
-          <p className="text-beige-200/80 text-xs sm:text-sm font-sans mt-2.5 leading-relaxed">
-            Construction is a lifetime investment. We replace uncertainty with engineering rigor, ethical material procurement, and transparent customer care.
+
+          <p className="text-base sm:text-lg text-navy-600 font-normal leading-relaxed">
+            In an unorganized construction industry, we operate with corporate transparency, certified engineering standards, and guaranteed completion timelines.
           </p>
         </div>
 
-        {/* 5 Reasons Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {points.map((item, idx) => {
-            const IconComponent = item.icon;
+        {/* 4 Strength Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {whyChooseUsData.map((item) => {
+            const Icon = iconMap[item.icon] || ShieldCheck;
+
             return (
               <div
-                key={idx}
-                className="glass-panel p-6 sm:p-7 rounded-3xl transition-all duration-200 hover:border-white/40 hover:-translate-y-1 shadow-card group"
+                key={item.number}
+                className="group relative bg-offwhite p-7 rounded-2xl border border-navy-100 hover:border-gold/60 shadow-soft hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white/15 text-sand flex items-center justify-center mb-5 group-hover:bg-terracotta group-hover:text-white transition-all duration-200">
-                  <IconComponent className="w-6 h-6" />
+                {/* Gold Top Accent Line */}
+                <div className="absolute top-0 left-8 right-8 h-1 bg-transparent group-hover:bg-gold transition-colors rounded-t-full" />
+
+                <div className="space-y-5">
+                  {/* Card Header with Icon & Number */}
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-xl bg-navy text-gold flex items-center justify-center shadow-md group-hover:bg-gold group-hover:text-navy-950 transition-colors">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <span className="font-mono text-2xl font-bold text-navy-200 group-hover:text-gold/60 transition-colors">
+                      {item.number}
+                    </span>
+                  </div>
+
+                  {/* Title & Description */}
+                  <div className="space-y-2.5">
+                    <h3 className="text-xl font-serif font-bold text-navy-950 group-hover:text-gold-dark transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-navy-600 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-base sm:text-lg font-serif font-bold text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-beige-200/80 text-xs sm:text-sm font-sans leading-relaxed">
-                  {item.description}
-                </p>
+
+                {/* Sub-benefit highlight */}
+                <div className="mt-6 pt-4 border-t border-navy-200/60 flex items-center gap-2 text-xs font-semibold text-navy-800">
+                  <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0" />
+                  <span>100% Contractually Bound</span>
+                </div>
               </div>
             );
           })}

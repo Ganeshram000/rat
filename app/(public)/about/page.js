@@ -1,10 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { ShieldCheck, Users, CheckCircle, ArrowRight, HardHat, Ruler } from 'lucide-react';
+import Image from 'next/image';
+import { ShieldCheck, Users, CheckCircle, ArrowRight, HardHat, Ruler, Award, MapPin } from 'lucide-react';
+import { companyConfig, companyIntro, companyStats } from '@/data/staticData';
 
 export const metadata = {
-  title: 'About Us — Construction Philosophy & Craftsmanship',
-  description: 'Learn about NeevSaathi, a premier building contractor in Jaipur committed to structural integrity, transparent estimates, and customer-first execution.',
+  title: 'About Us — Construction Philosophy & Craftsmanship | NeevSaathi Jaipur',
+  description: 'Learn about NeevSaathi, a premier turnkey building contractor in Jaipur committed to structural integrity, transparent estimates, and customer-first execution.',
 };
 
 export default function AboutPage() {
@@ -12,7 +14,7 @@ export default function AboutPage() {
     {
       icon: ShieldCheck,
       title: 'Structural Honesty',
-      description: 'The foundation (Neev) is unseen once built, which is why we hold ourselves to the highest ethical and engineering standards. Fe550D TMT reinforcement, certified mix designs, and proper curing are never compromised.'
+      description: 'The foundation (Neev) is unseen once built, which is why we hold ourselves to the highest ethical and engineering standards. Fe-550D TMT reinforcement, certified mix designs, and proper curing are never compromised.'
     },
     {
       icon: Ruler,
@@ -21,8 +23,8 @@ export default function AboutPage() {
     },
     {
       icon: Users,
-      title: 'Customer-Centric Partnership',
-      description: 'True to our name "Saathi" (companion/partner), we guide you through every choice: from room layouts and soil considerations to tile selections and waterproofing methods.'
+      title: 'Client Partnership',
+      description: 'True to our name "Saathi" (companion/partner), we guide you through every choice: from room layouts and soil considerations to stone selections and waterproofing methods.'
     },
     {
       icon: HardHat,
@@ -32,181 +34,143 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="py-8 sm:py-12 lg:py-16 space-y-12 sm:space-y-16">
-      {/* Header Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel rounded-3xl p-8 sm:p-12 border border-white/20 shadow-2xl text-white">
-          <div className="max-w-3xl">
-            <span className="inline-block px-3.5 py-1 rounded-full glass-badge text-sand text-xs font-sans font-semibold uppercase tracking-wider mb-3">
-              Our Story & Philosophy
+    <div className="bg-offwhite min-h-screen py-12 sm:py-16 lg:py-20 text-navy-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        
+        {/* Header Hero Banner */}
+        <div className="bg-navy rounded-3xl p-8 sm:p-12 lg:p-16 border border-gold/40 shadow-2xl text-white relative overflow-hidden">
+          <div className="max-w-3xl relative z-10 space-y-4">
+            <span className="inline-block px-3.5 py-1.5 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-[0.2em]">
+              OUR STORY & PHILOSOPHY
             </span>
             <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight leading-tight">
-              Building Enduring Structures Across Jaipur
+              Building Enduring Structures Across Jaipur Since 2011
             </h1>
-            <p className="text-beige-200/90 text-sm sm:text-base font-sans mt-3 leading-relaxed">
-              At NeevSaathi, we bridge traditional Rajasthani architectural elegance with modern civil engineering precision.
+            <p className="text-white/80 text-base sm:text-lg font-light leading-relaxed">
+              At NeevSaathi, we bridge traditional Rajasthani architectural elegance with modern civil engineering precision and corporate transparency.
             </p>
           </div>
+
+          <div 
+            className="absolute inset-0 opacity-10 pointer-events-none"
+            style={{
+              backgroundImage: `radial-gradient(#C9A45C 1px, transparent 1px)`,
+              backgroundSize: '32px 32px'
+            }}
+          />
         </div>
-      </div>
 
-      {/* Main Introduction & Philosophy */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel rounded-3xl p-8 sm:p-12 border border-white/20 shadow-2xl text-white">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        {/* Main Introduction & Story */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <span className="inline-block px-3.5 py-1.5 rounded-full bg-gold/15 text-gold-dark text-xs font-semibold uppercase tracking-wider">
+              The Meaning of NeevSaathi
+            </span>
             
-            {/* Left Content (7 cols) */}
-            <div className="lg:col-span-7 space-y-5">
-              <span className="inline-block px-3.5 py-1 rounded-full glass-badge text-sand text-xs font-sans font-bold uppercase tracking-wider">
-                Who We Are
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-serif font-bold text-white tracking-tight">
-                Dedicated to Quality, Transparency, and Your Lifelong Vision
-              </h2>
-              <p className="text-beige-200/80 font-sans text-xs sm:text-sm leading-relaxed">
-                <strong className="text-white">NeevSaathi</strong> was established in Jaipur with a singular conviction: constructing a home or commercial building is one of the most consequential milestones in a person’s life. It demands uncompromised structural integrity, complete transparency, and genuine respect for the owner’s investment.
-              </p>
-              <p className="text-beige-200/80 font-sans text-xs sm:text-sm leading-relaxed">
-                Operating across Jaipur’s vibrant localities—from Vaishali Nagar and Mansarovar to Jagatpura and C-Scheme—our team brings focused on-site engineering expertise, deep local knowledge of Rajasthan’s geological and climatic nuances, and a commitment to on-time milestone delivery.
-              </p>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-navy-950">
+              Why We Call Ourselves <span className="text-gold-dark">Neev</span> (Foundation) & <span className="text-gold-dark">Saathi</span> (Companion)
+            </h2>
 
-              <div className="p-6 rounded-2xl glass-card border border-white/20 text-white">
-                <h4 className="font-serif font-bold text-sand text-base mb-1">
-                  The NeevSaathi Promise
-                </h4>
-                <p className="text-beige-100 font-sans text-xs sm:text-sm leading-relaxed italic">
-                  &ldquo;A building is only as good as what lies beneath the surface. From foundation depth and steel reinforcement to the final touch of paint, we build every square foot as if it were our own family home.&rdquo;
-                </p>
-              </div>
-            </div>
+            <p className="text-navy-700 leading-relaxed">
+              In Hindi, <strong>Neev</strong> means the foundation — the most crucial, load-bearing component of any building. Though buried beneath the ground, the longevity of every wall, arch, and ceiling depends entirely upon its strength.
+            </p>
 
-            {/* Right Showcase Image Grid (5 cols) */}
-            <div className="lg:col-span-5 grid grid-cols-2 gap-3.5">
-              <div className="space-y-3.5">
-                <div className="h-44 sm:h-52 rounded-2xl overflow-hidden shadow-soft border border-white/20">
-                  <img
-                    src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80"
-                    alt="Civil engineering RCC casting on site in Jaipur"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="h-32 sm:h-40 rounded-2xl overflow-hidden shadow-soft border border-white/20">
-                  <img
-                    src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80"
-                    alt="Finished residential villa in Jaipur"
-                    className="w-full h-full object-cover"
-                  />
+            <p className="text-navy-700 leading-relaxed">
+              <strong>Saathi</strong> means a trusted companion. Constructing a home or commercial building is one of life’s most significant financial and emotional investments. We act as your knowledgeable, honest partner throughout the journey, protecting your budget, managing on-site contractors, and ensuring uncompromised execution.
+            </p>
+
+            <div className="pt-2 flex flex-wrap gap-4">
+              <div className="p-4 rounded-xl bg-white border border-navy-100 shadow-sm flex items-center gap-3">
+                <ShieldCheck className="w-6 h-6 text-gold flex-shrink-0" />
+                <div>
+                  <span className="text-xs text-navy-500 uppercase font-medium block">Compliance</span>
+                  <span className="text-sm font-bold text-navy-900">IS 456 & IS 1893 Standards</span>
                 </div>
               </div>
-              <div className="space-y-3.5 pt-6">
-                <div className="h-32 sm:h-40 rounded-2xl overflow-hidden shadow-soft border border-white/20">
-                  <img
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
-                    alt="Commercial building framing in Jaipur"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="h-44 sm:h-52 rounded-2xl overflow-hidden shadow-soft border border-white/20">
-                  <img
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
-                    alt="Modern Villa in Jagatpura, Jaipur"
-                    className="w-full h-full object-cover"
-                  />
+
+              <div className="p-4 rounded-xl bg-white border border-navy-100 shadow-sm flex items-center gap-3">
+                <MapPin className="w-6 h-6 text-gold flex-shrink-0" />
+                <div>
+                  <span className="text-xs text-navy-500 uppercase font-medium block">Local Focus</span>
+                  <span className="text-sm font-bold text-navy-900">Jaipur & Greater Rajasthan</span>
                 </div>
               </div>
             </div>
+          </div>
 
+          <div className="lg:col-span-5 relative">
+            <div className="relative h-96 sm:h-[450px] rounded-2xl overflow-hidden shadow-2xl border border-gold/40">
+              <Image
+                src="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=1000&q=85"
+                alt="NeevSaathi Construction Site in Jaipur"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="text-gold text-xs font-semibold uppercase tracking-wider block">On-Site Supervision</span>
+                <p className="text-sm font-serif font-bold">Primary Steel & Concrete Compaction in Progress</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Core Values Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="inline-block px-3.5 py-1 rounded-full glass-badge text-sand text-xs font-sans font-bold uppercase tracking-wider mb-2">
-            What Defines Us
-          </span>
-          <h2 className="text-2xl sm:text-4xl font-serif font-bold text-white tracking-tight">
-            Our Core Construction Values
-          </h2>
-        </div>
+        {/* 4 Core Pillars */}
+        <div className="space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-navy-950">
+              Our Core Construction Values
+            </h3>
+            <p className="text-sm text-navy-600">
+              Built on verified engineering ethics and daily on-site discipline.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((v, idx) => {
-            const IconComp = v.icon;
-            return (
-              <div
-                key={idx}
-                className="glass-panel p-6 sm:p-7 rounded-3xl border border-white/20 shadow-card flex flex-col justify-between hover:border-white/40 transition-all duration-200"
-              >
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-white/15 text-sand flex items-center justify-center mb-5">
-                    <IconComp className="w-6 h-6" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((v, idx) => {
+              const Icon = v.icon;
+              return (
+                <div key={idx} className="bg-white p-6 rounded-2xl border border-navy-100 shadow-sm space-y-3">
+                  <div className="w-10 h-10 rounded-lg bg-navy text-gold flex items-center justify-center">
+                    <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="font-serif font-bold text-base sm:text-lg text-white mb-2">
+                  <h4 className="text-lg font-serif font-bold text-navy-950">
                     {v.title}
-                  </h3>
-                  <p className="text-beige-200/80 font-sans text-xs sm:text-sm leading-relaxed">
+                  </h4>
+                  <p className="text-xs sm:text-sm text-navy-600 leading-relaxed">
                     {v.description}
                   </p>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Quality & Customer Communication */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel rounded-3xl p-8 sm:p-12 lg:p-14 border border-white/20 shadow-2xl text-white">
-          <div className="max-w-3xl">
-            <span className="text-xs uppercase font-sans tracking-wider text-sand font-bold block mb-1">
-              Transparent Supervision
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-3">
-              How We Communicate During Your Construction
-            </h2>
-            <p className="text-beige-200/80 font-sans text-xs sm:text-sm leading-relaxed mb-6">
-              We understand that you cannot be present on the building site every day. We bridge that gap with systematic digital reporting:
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs sm:text-sm font-sans text-beige-100 mb-8">
-              <div className="flex items-start gap-2.5">
-                <CheckCircle className="w-4 h-4 text-sand flex-shrink-0 mt-0.5" />
-                <span>Weekly photographic progress logs sent directly to your WhatsApp</span>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <CheckCircle className="w-4 h-4 text-sand flex-shrink-0 mt-0.5" />
-                <span>Advance material test certificates (cement bag dates, TMT mill tags)</span>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <CheckCircle className="w-4 h-4 text-sand flex-shrink-0 mt-0.5" />
-                <span>Stage-wise approval sign-offs prior to slab casting</span>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <CheckCircle className="w-4 h-4 text-sand flex-shrink-0 mt-0.5" />
-                <span>Transparent milestone-linked billing matching actual work completed</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center gap-3.5">
-              <Link
-                href="/estimate"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-terracotta hover:bg-terracotta-hover text-white font-sans font-semibold text-xs sm:text-sm rounded-xl shadow-terracotta transition-all duration-200 hover:scale-102"
-              >
-                <span>Request a Free Estimate</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 glass-button hover:bg-white/20 text-white text-xs sm:text-sm font-sans font-medium rounded-xl transition-colors duration-200"
-              >
-                <span>Visit Our Jaipur Site Office</span>
-              </Link>
-            </div>
+              );
+            })}
           </div>
         </div>
+
+        {/* Company Stats Bar */}
+        <div className="bg-navy rounded-2xl p-8 sm:p-10 border border-gold/40 shadow-xl text-white">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {companyStats.slice(0, 4).map((s, idx) => (
+              <div key={idx} className="space-y-1">
+                <div className="text-3xl sm:text-4xl font-serif font-bold text-gold">{s.value}</div>
+                <div className="text-xs sm:text-sm font-semibold text-white">{s.label}</div>
+                <div className="text-[11px] text-white/60">{s.subtext}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center py-6">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg text-sm font-semibold text-navy-950 bg-gold hover:bg-gold-hover transition-colors shadow-gold"
+          >
+            <span>Start Your Construction Conversation</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
       </div>
     </div>
   );

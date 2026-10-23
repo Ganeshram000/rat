@@ -1,162 +1,210 @@
 import React from 'react';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, MessageSquare, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageSquare, ShieldCheck, ArrowRight, Instagram, Linkedin, Facebook, Youtube } from 'lucide-react';
 import Logo from '@/components/common/Logo';
+import { companyConfig, servicesData } from '@/data/staticData';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const services = [
-    { label: 'Residential House Construction', href: '/services#residential-construction' },
-    { label: 'Commercial Construction', href: '/services#commercial-construction' },
-    { label: 'Home Renovation & Remodeling', href: '/services#renovation-remodeling' },
-    { label: 'Turnkey Construction & Contracting', href: '/services#turnkey-construction' },
-  ];
-
   const quickLinks = [
     { label: 'Home', href: '/' },
-    { label: 'About NeevSaathi', href: '/about' },
-    { label: 'Services Portfolio', href: '/services' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Our Services', href: '/services' },
     { label: 'Featured Projects', href: '/projects' },
+    { label: 'Our Engineering Team', href: '/team' },
     { label: 'Contact Site Office', href: '/contact' },
-    { label: 'Request Free Estimate', href: '/estimate' },
-    { label: 'Admin Portal', href: '/admin' },
+    { label: 'Get a Quote', href: '/#quote' },
   ];
 
   const localities = [
-    'Vaishali Nagar', 'Mansarovar', 'Malviya Nagar', 'Jagatpura',
-    'C-Scheme', 'Civil Lines', 'Ajmer Road', 'Tonk Road',
-    'Sitapura', 'Vidhyadhar Nagar', 'Raja Park', 'Chomu'
+    'Vaishali Nagar', 'Jagatpura', 'Mansarovar', 'C-Scheme',
+    'Ajmer Road', 'Malviya Nagar', 'Tonk Road', 'Civil Lines',
+    'Bani Park', 'Sirsi Road', 'Kalwar Road', 'Jhotwara'
   ];
 
   return (
-    <footer className="bg-[#140C08]/95 backdrop-blur-2xl text-beige-100 border-t border-white/15 pt-16 pb-10 relative z-10">
+    <footer className="bg-navy-950 text-white border-t border-gold/30 pt-16 pb-8 relative z-20" aria-label="Footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-white/10">
+        
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
           
-          {/* Column 1: Brand & Philosophy (2 cols) */}
-          <div className="lg:col-span-2 space-y-4">
+          {/* Column 1: Company Intro (4 cols) */}
+          <div className="lg:col-span-4 space-y-4">
             <Logo variant="light" size="large" />
-            
-            <p className="text-xs sm:text-sm text-beige-200/80 font-sans leading-relaxed max-w-sm pt-2">
-              Building Your Vision Into Reality. 
-              NeevSaathi is Jaipur’s trusted civil and building contractor, dedicated to uncompromised structural strength, transparent BOQ estimates, and on-time project execution.
+
+            <p className="text-xs sm:text-sm text-white/75 font-normal leading-relaxed max-w-sm pt-2">
+              NeevSaathi is Jaipur’s premier turnkey civil and building contractor, dedicated to uncompromised structural integrity, certified materials, transparent BOQ estimation, and guaranteed on-time project handover.
             </p>
 
-            <div className="flex flex-wrap items-center gap-2 pt-2">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass-badge text-xs text-beige-200">
-                <ShieldCheck className="w-4 h-4 text-sand" />
-                <span>Fe550D TMT & Tested Concrete</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass-badge text-xs text-beige-200">
-                <span className="w-2 h-2 rounded-full bg-sand" />
-                <span>Jaipur Registered Contractor</span>
-              </div>
+            <div className="pt-2 flex flex-col gap-2 text-xs text-white/70">
+              <span className="flex items-center gap-1.5 text-gold font-medium">
+                <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0" />
+                RERA Reg: {companyConfig.reraRegistration}
+              </span>
+              <span>Primary Fe-550D TMT Steel & IS-Code Compliant RCC</span>
             </div>
 
-            <div className="pt-2">
+            {/* Social Icons */}
+            <div className="pt-3 flex items-center gap-3">
               <a
-                href="https://wa.me/919829012345?text=Hello%20NeevSaathi%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project%20in%20Jaipur"
+                href={companyConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-semibold shadow-sm transition-transform hover:scale-102"
+                className="w-9 h-9 rounded-lg bg-navy-900 border border-white/10 hover:border-gold hover:text-gold flex items-center justify-center transition-colors text-white/80"
+                aria-label="Instagram"
               >
-                <MessageSquare className="w-4 h-4 fill-white" />
-                <span>WhatsApp Senior Engineer (+91 98290 12345)</span>
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href={companyConfig.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg bg-navy-900 border border-white/10 hover:border-gold hover:text-gold flex items-center justify-center transition-colors text-white/80"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href={companyConfig.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg bg-navy-900 border border-white/10 hover:border-gold hover:text-gold flex items-center justify-center transition-colors text-white/80"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href={companyConfig.social.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg bg-navy-900 border border-white/10 hover:border-gold hover:text-gold flex items-center justify-center transition-colors text-white/80"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div className="space-y-3">
-            <h4 className="font-serif font-bold text-sm text-white uppercase tracking-wider">
-              Quick Navigation
+          {/* Column 2: Our Services (3 cols) */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="text-sm font-serif font-bold text-gold tracking-wider uppercase">
+              Our Construction Services
             </h4>
-            <ul className="space-y-2 text-xs font-sans">
-              {quickLinks.map((item, idx) => (
-                <li key={idx}>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              {servicesData.map((service) => (
+                <li key={service.id}>
                   <Link
-                    href={item.href}
-                    className="text-beige-200/70 hover:text-white transition-colors duration-200 flex items-center gap-1"
+                    href={`/services#${service.id}`}
+                    className="text-white/75 hover:text-gold transition-colors flex items-center gap-1.5"
                   >
-                    <span>{item.label}</span>
+                    <span className="text-gold/60">•</span>
+                    <span>{service.title}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: Services */}
-          <div className="space-y-3">
-            <h4 className="font-serif font-bold text-sm text-white uppercase tracking-wider">
-              Construction Services
+          {/* Column 3: Quick Links (2 cols) */}
+          <div className="lg:col-span-2 space-y-4">
+            <h4 className="text-sm font-serif font-bold text-gold tracking-wider uppercase">
+              Company & Links
             </h4>
-            <ul className="space-y-2 text-xs font-sans">
-              {services.map((item, idx) => (
-                <li key={idx}>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              {quickLinks.map((link) => (
+                <li key={link.label}>
                   <Link
-                    href={item.href}
-                    className="text-beige-200/70 hover:text-white transition-colors duration-200"
+                    href={link.href}
+                    className="text-white/75 hover:text-gold transition-colors flex items-center gap-1.5"
                   >
-                    {item.label}
+                    <span className="text-gold/60">•</span>
+                    <span>{link.label}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 4: Contact & Office */}
-          <div className="space-y-3">
-            <h4 className="font-serif font-bold text-sm text-white uppercase tracking-wider">
+          {/* Column 4: Contact & Office (3 cols) */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="text-sm font-serif font-bold text-gold tracking-wider uppercase">
               Jaipur Site Office
             </h4>
-            <div className="space-y-2.5 text-xs font-sans text-beige-200/80">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-sand flex-shrink-0 mt-0.5" />
-                <span>Plot No. 42, Main Tonk Road, Near Gopalpura Flyover, Jaipur, Rajasthan 302015</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-sand flex-shrink-0" />
-                <a href="tel:+919829012345" className="hover:text-white transition-colors">
-                  +91 98290 12345
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-sand flex-shrink-0" />
-                <a href="mailto:contact@neevsaathi.com" className="hover:text-white transition-colors">
-                  contact@neevsaathi.com
-                </a>
-              </div>
-            </div>
 
-            <div className="pt-2">
-              <span className="block text-[11px] font-semibold text-sand uppercase tracking-wider mb-2">
-                Coverage Localities:
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                {localities.slice(0, 6).map((loc, idx) => (
-                  <span key={idx} className="px-2 py-0.5 rounded-md glass-badge text-[10px] text-beige-200">
-                    {loc}
-                  </span>
-                ))}
+            <div className="space-y-3 text-xs sm:text-sm text-white/80">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                <p className="leading-relaxed text-white/75">
+                  {companyConfig.address}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-gold flex-shrink-0" />
+                <a
+                  href={`tel:${companyConfig.phoneClean}`}
+                  className="hover:text-gold transition-colors font-medium text-white"
+                >
+                  {companyConfig.phone}
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-gold flex-shrink-0" />
+                <a
+                  href={`mailto:${companyConfig.email}`}
+                  className="hover:text-gold transition-colors text-white/75"
+                >
+                  {companyConfig.email}
+                </a>
+              </div>
+
+              <div className="pt-2">
+                <a
+                  href={`https://wa.me/${companyConfig.whatsapp}?text=Hello%20NeevSaathi%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project%20in%20Jaipur`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600/90 hover:bg-emerald-600 text-white text-xs font-semibold transition-colors"
+                >
+                  <MessageSquare className="w-3.5 h-3.5" />
+                  <span>Chat on WhatsApp</span>
+                </a>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar: Copyright & Compliance */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-beige-200/60">
-          <div>
-            &copy; {currentYear} NeevSaathi Construction & Contracting Pvt. Ltd. All rights reserved.
+        {/* Localities Served Line */}
+        <div className="py-6 border-b border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-white/60">
+          <span className="font-semibold text-gold tracking-wide">
+            Prime Service Localities in Jaipur:
+          </span>
+          <div className="flex flex-wrap justify-center gap-x-3 gap-y-1">
+            {localities.map((loc) => (
+              <span key={loc} className="hover:text-white transition-colors cursor-default">
+                {loc} •
+              </span>
+            ))}
+            <span>All Rajasthan</span>
           </div>
+        </div>
+
+        {/* Bottom Bar: Copyright & Terms */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+          <p>
+            © {currentYear} {companyConfig.legalName}. All rights reserved.
+          </p>
           <div className="flex items-center gap-6">
-            <span>Jaipur, Rajasthan, India</span>
-            <Link href="/admin" className="hover:text-sand transition-colors">
-              Admin Login
+            <span className="text-[11px]">RERA Compliant Contractor</span>
+            <Link href="/contact" className="hover:text-gold transition-colors">
+              Privacy & Legal
             </Link>
           </div>
         </div>
+
       </div>
     </footer>
   );

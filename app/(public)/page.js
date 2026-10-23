@@ -1,58 +1,48 @@
 import React from 'react';
-import Hero from '@/components/home/Hero';
-import TrustHighlights from '@/components/home/TrustHighlights';
-import ServicesPreview from '@/components/home/ServicesPreview';
+import HeroSlider from '@/components/home/HeroSlider';
+import CompanyIntro from '@/components/home/CompanyIntro';
+import OurServices from '@/components/home/OurServices';
 import FeaturedProjects from '@/components/home/FeaturedProjects';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
-import ProcessSection from '@/components/home/ProcessSection';
-import EstimateCTA from '@/components/home/EstimateCTA';
+import ConstructionProcess from '@/components/home/ConstructionProcess';
+import CompanyStats from '@/components/home/CompanyStats';
 import Testimonials from '@/components/home/Testimonials';
-import ServiceAreaMap from '@/components/home/ServiceAreaMap';
-import { getServices, getProjects, getSettings } from '@/lib/db';
-
-export const revalidate = 60; // Revalidate every 60 seconds
+import GetQuoteCTA from '@/components/home/GetQuoteCTA';
 
 export const metadata = {
-  title: 'NeevSaathi — Trusted Construction Contractor in Jaipur, Rajasthan',
-  description: 'Building Your Vision, From Foundation to Finish. Premium residential villa construction, commercial spaces, turnkey contracts, and renovations in Jaipur and nearby Rajasthan.',
+  title: 'NeevSaathi — Premium Construction Contractor in Jaipur, Rajasthan',
+  description: 'We Build Your Vision Into Reality. Turnkey residential luxury villas, commercial buildings, architectural planning, and renovations across Jaipur with certified materials and transparent BOQ estimates.',
 };
 
-export default async function HomePage() {
-  const allServices = getServices() || [];
-  const allProjects = getProjects() || [];
-  const settings = getSettings() || {};
-
-  const publishedServices = allServices.filter(s => s.published);
-  const featuredProjects = allProjects.filter(p => p.published);
-
+export default function HomePage() {
   return (
     <>
-      {/* 1. Hero Section */}
-      <Hero />
+      {/* 02 Hero Slider — Construction Projects */}
+      <HeroSlider />
 
-      {/* 2. Trust Highlights Banner */}
-      <TrustHighlights />
+      {/* 03 Company Introduction */}
+      <CompanyIntro />
 
-      {/* 3. Our Services Preview */}
-      <ServicesPreview services={publishedServices} />
+      {/* 04 Our Services */}
+      <OurServices />
 
-      {/* 4. Featured Projects Showcase */}
-      <FeaturedProjects projects={featuredProjects} />
+      {/* 05 Featured Projects / Portfolio */}
+      <FeaturedProjects />
 
-      {/* 5. Why Choose NeevSaathi */}
+      {/* 06 Why Choose Us? */}
       <WhyChooseUs />
 
-      {/* 6. Four-Step Construction Process */}
-      <ProcessSection />
+      {/* 07 Construction Process */}
+      <ConstructionProcess />
 
-      {/* 7. Estimate Enquiry CTA Banner */}
-      <EstimateCTA />
+      {/* 08 Numbers / Company Stats */}
+      <CompanyStats />
 
-      {/* 8. Verified Homeowner & Client Testimonials */}
+      {/* 09 Testimonials */}
       <Testimonials />
 
-      {/* 9. Jaipur Service Area & Map Section */}
-      <ServiceAreaMap settings={settings} />
+      {/* 10 Get a Quote / Contact CTA */}
+      <GetQuoteCTA />
     </>
   );
 }

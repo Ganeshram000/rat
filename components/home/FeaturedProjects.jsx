@@ -1,147 +1,247 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, MapPin } from 'lucide-react';
-import ProjectGalleryModal from '@/components/projects/ProjectGalleryModal';
+import { MapPin, ArrowRight, Maximize2, CheckCircle2, Building, Calendar, X } from 'lucide-react';
+import { featuredProjects } from '@/data/staticData';
 
-export default function FeaturedProjects({ projects = [] }) {
+export default function FeaturedProjects() {
+  const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  // Default projects matching the visual reference if none supplied
-  const defaultProjects = [
-    {
-      id: 'modern-villa',
-      title: 'Modern Villa',
-      location: 'Jagatpura, Jaipur',
-      category: 'Residential',
-      coverImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-      description: '4,200 sq.ft luxury villa with double-height foyer, landscaped courtyard, and earthquake-resistant RCC frame.',
-    },
-    {
-      id: 'commercial-complex',
-      title: 'Commercial Complex',
-      location: 'Sitapura, Jaipur',
-      category: 'Commercial',
-      coverImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
-      description: '4-storey commercial plaza engineered with JDA setback compliance, curtain glass facade, and high-footfall flooring.',
-    },
-    {
-      id: 'home-renovation',
-      title: 'Home Renovation',
-      location: 'Vaishali Nagar, Jaipur',
-      category: 'Renovation',
-      coverImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
-      description: 'Complete structural strengthening, elevation redesign with Rajasthani stone cladding, and water-proofing retrofit.',
-    },
-    {
-      id: 'interior-project',
-      title: 'Interior Project',
-      location: 'Mansarovar, Jaipur',
-      category: 'Interior',
-      coverImage: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80',
-      description: 'Custom modular woodwork, false ceilings with concealed warm ambient lighting, and Italian vitrified finishes.',
-    },
-  ];
+  const categories = ['All', 'Residential', 'Commercial', 'Renovation'];
 
-  // Merge with backend projects if available
-  const displayProjects = defaultProjects.map((dp, idx) => {
-    const backendProj = projects[idx] || projects.find(p => p.title?.toLowerCase().includes(dp.title.toLowerCase()));
-    if (backendProj) {
-      return {
-        ...dp,
-        ...backendProj,
-        coverImage: backendProj.coverImage || (backendProj.images && backendProj.images[0]) || dp.coverImage,
-      };
-    }
-    return dp;
-  });
+  const filteredProjects = activeCategory === 'All'
+    ? featuredProjects
+    : featuredProjects.filter(p => p.category.toLowerCase() === activeCategory.toLowerCase());
 
   return (
-    <section className="pt-2 pb-10 sm:pt-4 sm:pb-14 relative">
+    <section id="portfolio" className="py-20 lg:py-28 bg-offwhite text-navy-900 border-t border-navy-100" aria-label="Featured Projects Portfolio">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header with Lora font and accent line */}
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-4">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white tracking-tight">
-              Featured Projects
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div className="space-y-3 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/15 border border-gold/40 text-gold-dark text-xs font-semibold tracking-[0.2em] uppercase">
+              <Building className="w-3.5 h-3.5 text-gold" />
+              <span>LANDMARK PORTFOLIO</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-navy-950 tracking-tight">
+              Featured Projects & Civil Works
             </h2>
-            <div className="hidden sm:block w-16 h-[2px] bg-sand/60 rounded-full" />
+
+            <p className="text-base text-navy-600 font-normal leading-relaxed">
+              Explore our completed luxury residences, commercial towers, and ongoing developments in Jaipur.
+            </p>
           </div>
 
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-sans font-medium text-sand hover:text-white transition-colors duration-200 group"
-          >
-            <span>View All Projects</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
-          </Link>
+          {/* Category Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2 bg-white p-1.5 rounded-xl border border-navy-200/80 shadow-sm">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                  activeCategory === cat
+                    ? 'bg-navy text-gold shadow-sm'
+                    : 'text-navy-700 hover:text-navy hover:bg-offwhite'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* 4 Glassmorphism Project Cards in a Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {displayProjects.map((project, index) => (
+        {/* Editorial Project Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project) => (
             <div
-              key={project.id || index}
-              onClick={() => setSelectedProject(project)}
-              className="glass-panel rounded-3xl p-3 sm:p-3.5 flex flex-col justify-between group cursor-pointer transition-all duration-200 hover:border-white/40 hover:-translate-y-1 shadow-card"
+              key={project.id}
+              className="group bg-white rounded-2xl overflow-hidden border border-navy-100 hover:border-gold/60 shadow-soft hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between"
             >
-              <div>
-                {/* Image Container with Hover Zoom */}
-                <div className="relative h-44 w-full rounded-2xl overflow-hidden bg-brown-dark/40 shadow-inner">
-                  <img
-                    src={project.coverImage}
-                    alt={`${project.title} - ${project.location}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              {/* Image & Badges */}
+              <div className="relative h-64 w-full overflow-hidden bg-navy-900 cursor-pointer" onClick={() => setSelectedProject(project)}>
+                <Image
+                  src={project.image}
+                  alt={`${project.name} by NeevSaathi Jaipur`}
+                  fill
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={85}
+                />
+                
+                {/* Gradient Shadow */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/20 to-transparent" />
 
-                  {/* Category Pill */}
-                  <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-lg glass-badge text-[10px] font-sans font-semibold text-white">
+                {/* Top Badges */}
+                <div className="absolute top-4 left-4 flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-navy/90 border border-gold/40 text-gold text-xs font-semibold backdrop-blur-sm shadow-sm">
                     {project.category}
+                  </span>
+                  <span className={`px-2.5 py-1 rounded-full text-[11px] font-semibold backdrop-blur-sm shadow-sm ${
+                    project.status === 'Completed'
+                      ? 'bg-emerald-900/80 text-emerald-200 border border-emerald-500/40'
+                      : 'bg-gold/90 text-navy-950 font-bold'
+                  }`}>
+                    {project.status}
                   </span>
                 </div>
 
-                {/* Project Title and Location */}
-                <div className="pt-3.5 pb-1 px-1">
-                  <h3 className="font-serif font-bold text-sm sm:text-base text-white leading-tight line-clamp-1">
-                    {project.title}
-                  </h3>
-                  <div className="flex items-center gap-1 text-[11px] font-sans text-sand mt-0.5">
-                    <MapPin className="w-3 h-3 text-sand flex-shrink-0" />
-                    <span className="truncate">{project.location}</span>
-                  </div>
+                {/* Quick Expand Button */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedProject(project);
+                  }}
+                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-navy/80 hover:bg-gold text-white hover:text-navy-950 flex items-center justify-center transition-colors shadow-md"
+                  aria-label="View Project Preview"
+                >
+                  <Maximize2 className="w-4 h-4" />
+                </button>
+
+                {/* Bottom Overlay Info */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white/90 text-xs">
+                  <span className="flex items-center gap-1.5 font-medium">
+                    <MapPin className="w-3.5 h-3.5 text-gold" />
+                    {project.location}
+                  </span>
+                  <span className="font-mono text-gold font-semibold">
+                    {project.area}
+                  </span>
                 </div>
               </div>
 
-              {/* Bottom Row: View Details & Circular Arrow Button */}
-              <div className="pt-2 px-1 flex items-center justify-between border-t border-white/10 mt-2">
-                <span className="text-[11px] font-sans font-medium text-beige-200/80 group-hover:text-white transition-colors">
-                  View Case Study
-                </span>
+              {/* Card Body */}
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-2">
+                  <h3 
+                    onClick={() => setSelectedProject(project)}
+                    className="text-xl font-serif font-bold text-navy-950 group-hover:text-gold-dark transition-colors cursor-pointer"
+                  >
+                    {project.name}
+                  </h3>
+                  <p className="text-xs text-navy-600 line-clamp-2 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
 
-                <div 
-                  className="w-7 h-7 rounded-full bg-white text-brown-dark flex items-center justify-center shadow-sm group-hover:bg-terracotta group-hover:text-white transition-all duration-200 group-hover:scale-105"
-                  aria-label={`View ${project.title}`}
-                >
-                  <ArrowRight className="w-3.5 h-3.5" />
+                {/* Scope & Action Button */}
+                <div className="pt-3 border-t border-navy-100 flex items-center justify-between">
+                  <span className="text-[11px] font-medium text-navy-500 truncate max-w-[170px]">
+                    {project.scope}
+                  </span>
+
+                  <button
+                    onClick={() => setSelectedProject(project)}
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-navy-900 hover:text-gold transition-colors"
+                  >
+                    <span>View Details</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
+        {/* View All Projects Action */}
+        <div className="mt-14 text-center">
+          <Link
+            href="/projects"
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-lg text-sm font-semibold text-white bg-navy hover:bg-navy-800 transition-colors shadow-md group"
+          >
+            <span>Explore Complete Portfolio (30+ Projects)</span>
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
+
       </div>
 
-      {/* Lightbox / Case Study Modal */}
+      {/* Interactive Project Details Modal */}
       {selectedProject && (
-        <ProjectGalleryModal
-          project={selectedProject}
-          isOpen={Boolean(selectedProject)}
-          onClose={() => setSelectedProject(null)}
-        />
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-md animate-fade-in"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div 
+            className="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl border border-gold/40 text-navy-900"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Image */}
+            <div className="relative h-72 w-full bg-navy-900">
+              <Image
+                src={selectedProject.image}
+                alt={selectedProject.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 672px"
+              />
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-navy-950/80 text-white hover:text-gold flex items-center justify-center transition-colors"
+                aria-label="Close Modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <div className="absolute bottom-4 left-4">
+                <span className="px-3 py-1 rounded-full bg-gold text-navy-950 text-xs font-bold uppercase tracking-wider">
+                  {selectedProject.category} • {selectedProject.status}
+                </span>
+              </div>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 sm:p-8 space-y-4">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 className="text-2xl font-serif font-bold text-navy-950">
+                  {selectedProject.name}
+                </h3>
+                <span className="text-sm font-semibold text-gold-dark font-mono">
+                  {selectedProject.area}
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4 text-xs text-navy-600">
+                <span className="flex items-center gap-1.5 font-medium">
+                  <MapPin className="w-4 h-4 text-gold" />
+                  {selectedProject.location}
+                </span>
+                <span>•</span>
+                <span className="flex items-center gap-1.5 font-medium">
+                  <Calendar className="w-4 h-4 text-gold" />
+                  Year: {selectedProject.year}
+                </span>
+              </div>
+
+              <p className="text-sm text-navy-700 leading-relaxed">
+                {selectedProject.description}
+              </p>
+
+              <div className="p-4 rounded-xl bg-offwhite border border-navy-100 text-xs space-y-1">
+                <span className="font-semibold text-navy-900 block">Scope of Execution:</span>
+                <p className="text-navy-600">{selectedProject.scope}</p>
+              </div>
+
+              <div className="pt-2 flex justify-end gap-3">
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="px-5 py-2.5 rounded-lg text-xs font-semibold text-navy-800 hover:bg-offwhite border border-navy-200 transition-colors"
+                >
+                  Close
+                </button>
+                <Link
+                  href="/contact"
+                  className="px-5 py-2.5 rounded-lg text-xs font-semibold text-navy-950 bg-gold hover:bg-gold-hover transition-colors shadow-sm"
+                >
+                  Inquire About Similar Project
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </section>
   );

@@ -8,59 +8,67 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Terracotta + Beige Brand Colors
-        terracotta: {
-          DEFAULT: '#A3452F', // Primary Terracotta
-          50: '#FDF7F5',
-          100: '#F9ECE8',
-          200: '#F2D5CD',
-          300: '#E7B3A6',
-          400: '#D68A77',
-          500: '#BA573F',
-          600: '#A3452F', // Core Primary
-          700: '#863725',
-          800: '#6E2D1E',
-          900: '#5A261A',
-          hover: '#8C3925',
-          light: '#FBF0EC',
+        // Royal Navy Brand Palette
+        navy: {
+          DEFAULT: '#142B4A', // Core Brand Navy
+          50: '#F0F4F9',
+          100: '#DCE5F1',
+          200: '#BACCE1',
+          300: '#8FAECD',
+          400: '#5F8DBA',
+          500: '#2A5D94',
+          600: '#1C3E6A',
+          700: '#142B4A', // Primary Navy
+          800: '#0E1F35',
+          900: '#091424',
+          950: '#050B14',
+          dark: '#0D1C30',
+          deep: '#081220',
         },
-        beige: {
-          DEFAULT: '#FAF6EE', // Warm Beige Background
+        // Gold Accent Palette
+        gold: {
+          DEFAULT: '#C9A45C', // Core Brand Gold
+          light: '#DFC07C',
+          lighter: '#F3E5C3',
+          dark: '#B08B42',
+          hover: '#B89047',
           50: '#FDFBF7',
-          100: '#FAF6EE', // Page Background
-          200: '#F3E7DA', // Light Section Background
-          300: '#E8D7C4',
-          400: '#DCBEA2',
+          100: '#F9F3E5',
+          200: '#F2E4C4',
+          300: '#E7CE97',
+          400: '#D8B76E',
+          500: '#C9A45C',
+          600: '#B89047',
+          700: '#947032',
+          800: '#715324',
+          900: '#523B17',
         },
-        sand: {
-          DEFAULT: '#D9A373', // Accent Sand
-          light: '#E6BD97',
-          dark: '#B87E4A',
-          50: '#FBF5EF',
-          100: '#F6EADA',
-        },
-        brown: {
-          dark: '#5B3A2E', // Dark Brown Headings & Text
-          medium: '#8D6E63', // Medium Text
-          light: '#BCAAA4',
-          deep: '#3D261E',
+        // Off-White Section Backgrounds
+        offwhite: {
+          DEFAULT: '#F8F6F1', // Core Section Background
+          50: '#FCFBF9',
+          100: '#F8F6F1',
+          200: '#EFEBE1',
+          300: '#E4DDD0',
         },
         card: '#FFFFFF',
       },
       fontFamily: {
         sans: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-lora)', 'Georgia', 'serif'],
-        serif: ['var(--font-lora)', 'Georgia', 'serif'],
+        heading: ['var(--font-playfair)', 'var(--font-lora)', 'Georgia', 'serif'],
+        serif: ['var(--font-playfair)', 'var(--font-lora)', 'Georgia', 'serif'],
         body: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'soft': '0 4px 20px -2px rgba(91, 58, 46, 0.06)',
-        'card': '0 10px 30px -4px rgba(91, 58, 46, 0.08), 0 4px 10px -2px rgba(91, 58, 46, 0.04)',
-        'premium': '0 20px 40px -8px rgba(91, 58, 46, 0.12)',
-        'terracotta': '0 10px 25px -5px rgba(163, 69, 47, 0.28)',
+        'soft': '0 4px 20px -2px rgba(20, 43, 74, 0.06)',
+        'card': '0 10px 30px -4px rgba(20, 43, 74, 0.08), 0 4px 10px -2px rgba(20, 43, 74, 0.04)',
+        'card-hover': '0 20px 40px -8px rgba(20, 43, 74, 0.14), 0 8px 16px -4px rgba(20, 43, 74, 0.06)',
+        'premium': '0 25px 50px -12px rgba(20, 43, 74, 0.20)',
+        'gold': '0 10px 25px -5px rgba(201, 164, 92, 0.35)',
+        'gold-glow': '0 0 30px rgba(201, 164, 92, 0.25)',
       },
       transitionDuration: {
-        DEFAULT: '200ms',
+        DEFAULT: '250ms',
       },
     },
   },

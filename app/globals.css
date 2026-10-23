@@ -6,17 +6,17 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
-    color: #FAF6EE;
+    color: #142B4A;
   }
 
   body {
-    color: #FAF6EE;
-    background-color: #20130E; /* Warm Dark Brown instead of black */
+    color: #142B4A;
+    background-color: #F8F6F1;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-lora), Georgia, serif;
+    font-family: var(--font-playfair), var(--font-lora), Georgia, serif;
     letter-spacing: -0.015em;
   }
 
@@ -25,107 +25,54 @@
   }
 }
 
-/* Glassmorphism Styles & Utilities */
-.glass-nav {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.08) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  border-top: 1px solid rgba(255, 255, 255, 0.50);
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.22), inset 0 1px 1px 0 rgba(255, 255, 255, 0.35);
-}
-
-.glass-nav-scrolled {
-  background: rgba(40, 22, 16, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.35);
-}
-
-.glass-panel {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.08) 100%);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.30);
-  border-top: 1px solid rgba(255, 255, 255, 0.50);
-  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.20), inset 0 1px 1px 0 rgba(255, 255, 255, 0.30);
-}
-
-.glass-panel-hover {
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-panel-hover:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.12) 100%);
-  border-color: rgba(255, 255, 255, 0.48);
-  transform: translateY(-2px);
-  box-shadow: 0 14px 40px 0 rgba(0, 0, 0, 0.28), inset 0 1px 1px 0 rgba(255, 255, 255, 0.40);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-top: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.18);
-}
-
-.glass-badge {
-  background: rgba(255, 255, 255, 0.20);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-top: 1px solid rgba(255, 255, 255, 0.50);
-}
-
-.glass-button {
-  background: rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  border-top: 1px solid rgba(255, 255, 255, 0.48);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s ease;
-}
-
-.glass-button:hover {
-  background: rgba(255, 255, 255, 0.26);
-  border-color: rgba(255, 255, 255, 0.50);
-}
-
-/* Fallback for browsers that do not support backdrop-filter */
-@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-  .glass-panel, .glass-nav, .glass-card {
-    background: rgba(50, 30, 22, 0.90);
-  }
-}
-
-/* Custom Scrollbar in Warm Sand */
+/* Custom Scrollbar in Royal Navy & Gold */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(35, 20, 15, 0.8);
+  background: #0E1F35;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D9A373;
+  background: #C9A45C;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A3452F;
+  background: #DFC07C;
+}
+
+/* Luxury Gold & Navy Utilities */
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #DFC07C 0%, #C9A45C 50%, #B89047 100%);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F3E5C3 0%, #DFC07C 50%, #C9A45C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navy-gradient-bg {
+  background: linear-gradient(180deg, #142B4A 0%, #0D1C30 100%);
+}
+
+.gold-border {
+  border-color: rgba(201, 164, 92, 0.4);
+}
+
+.gold-border-glow {
+  border-color: #C9A45C;
+  box-shadow: 0 0 15px rgba(201, 164, 92, 0.25);
 }
 
 /* Subtle, Performant Animations (150-250ms) */
 @keyframes fadeIn {
   from { 
     opacity: 0; 
-    transform: translateY(4px); 
+    transform: translateY(6px); 
   }
   to { 
     opacity: 1; 
@@ -134,7 +81,7 @@
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Accessibility: Respect Reduced Motion */
